@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/angular.js/1.6.6/angular.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="page.js"></script>
+</head>
+<body ng-controller="appCtrl">
+<ng-page page-no="pageNo" page-size="pageSize" page-change="pageChange()" total-count="totalCount"
+         show-page-count="5"></ng-page>
+
+<script>
+  var app = angular.module('app', ['ngPage']);
+  app.controller('appCtrl', function ($scope) {
+    $scope.pageNo = 1;
+    $scope.pageSize = 10;
+    $scope.totalCount = 122;
+    $scope.msg = 'sss';
+    $scope.pageChange = function () {
+      console.log($scope.pageNo);
+    }
+  });
+</script>
+</body>
+</html>

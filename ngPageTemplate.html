@@ -1,0 +1,18 @@
+<div class="col-sm-12">
+  <ul class="pagination" ng-show="pageCount > 1">
+    <li ng-class="{true:'disabled',false:''}[pageNo == 1]">
+      <a href="javascript:void(0)" ng-click="goPage(1)">&laquo;</a>
+    </li>
+    <li ng-class="{true:'disabled',false:''}[pageNo == preNo]">
+      <a href="javascript:void(0)" ng-click="goPage(preNo)">&lsaquo;</a>
+    </li>
+    <li ng-repeat="p in pageList track by $index" ng-class="{true : 'active' , false: ''}[p == pageNo]"
+        ng-click="goPage(p)"><a href="javascript:void(0)">{{p}}</a></li>
+    <li ng-class="{true:'disabled',false:''}[pageNo == nextNo]">
+      <a href="javascript:void(0)" ng-click="goPage(nextNo)">&rsaquo;</a>
+    </li>
+    <li ng-class="{true:'disabled',false:''}[pageNo == pageCount]">
+      <a href="javascript:void(0)" ng-click="goPage(pageCount)">&raquo;</a>
+    </li>
+  </ul>
+</div>
